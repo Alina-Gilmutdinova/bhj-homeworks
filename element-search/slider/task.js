@@ -50,19 +50,5 @@ prev.onclick = function () {
 	return false;
 }
 
-const dotActive = function (count) {//вводим функцию счетчик
-	for (dot of dot) {
-		dot.classList.remove("slider__dot_active");
-	}
-	dot[count].classList.add("slider__dot_active");
-}
-
-dot.forEach((item, iDot) => {
-	item.onclick = () => {
-		i = iDot;
-		getCurrentSlide(i);
-		return false;
-	}
-})
 
 

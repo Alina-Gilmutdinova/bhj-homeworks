@@ -24,6 +24,7 @@ class Game {
       В случае правильного ввода слова вызываем this.success()
       При неправильном вводе символа - this.fail();
      */
+    document.addEventListener('keypress',(event) => )
   }
 
   success() {
