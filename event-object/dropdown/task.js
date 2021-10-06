@@ -14,11 +14,11 @@ choices.onclick = () => { //при кликании по списку, долж�
 }
 
 //реализуем закрытие списка и замену элемента с классом dropdown__value
-for (link of classLink) {
-   let button = link.closest(".dropdown__item").querySelector(".dropdown__link");
+for (link of classLink) { //classLink-интерируемся по этому массиву
+   let button = link.closest(".dropdown__item").querySelector(".dropdown__link");//создаем кнопочку, по клику на которой будет реализована функция
    button.onclick = () => {
        downList.classList.remove("dropdown__list_active");
        choices.textContent = button.textContent;
-       return false;
+       return false;//запрещаем переход по ссылке
    }
 }
