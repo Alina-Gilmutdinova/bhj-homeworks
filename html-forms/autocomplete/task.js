@@ -81,12 +81,17 @@ class Autocomplete {
         value: 'Содержимое атрибута value'
       }
     */
-    return [
-      {
-        text: 'Чубакка',
-        value: '1'
+      let arr = [];//создадим массив пустой
+      let i = 1;//зададим индекс
+      for (let element of this.input.options) {//начинаем перебирать массив 
+          if (element.text.toUpperCase().includes(text.toUpperCase())) {
+              arr.push({//добавляем элемент в массив
+                  text: element.text,
+                  value: i++
+              });
+          }
       }
-    ];
+      return arr;//возвращаем массив
   }
 }
 
