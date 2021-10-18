@@ -1,5 +1,5 @@
 let OpenChat = document.querySelector(".chat-widget__side");
-let text = document.getElementById("chat-widget__input");
+let input = document.getElementById("chat-widget__input");
 const widget = document.querySelector(".chat-widget");
 const messages = document.querySelector(".chat-widget__messages");
 //создадим массив из случайных сообщений
@@ -12,20 +12,20 @@ let activeChat = function () {
 OpenChat.addEventListener('click', activeChat);//открываем окно чата кликом
 OpenChat.addEventListener('mousedown', activeChat);//нажимаем над окном чата
 
-text.addEventListener('keypress', (event) => {//создаем событие которое вызывается при набирании текста
-    if (event.code === "Enter" && text.value.length) {//По нажатию Enter, реализуйте отправку в чат непустого текстового сообщения
-        let name = document.createElement("name");
-        let text = document.createElement("name");
-        let time = document.createElement("name");
-        name.appendChild(time);
-        name.appendChild(text);
-        name.classList.add("message");
-        name.classList.add("message_client");
-        messages.appendChild(name);
+input.addEventListener('keypress', (event) => {//создаем событие которое вызывается при набирании текста
+    if (event.code === "Enter" && input.value.length) {//По нажатию Enter, реализуйте отправку в чат непустого текстового сообщения
+        let div = document.createElement("div");
+        let text = document.createElement("div");
+        let time = document.createElement("div");
+        div.appendChild(time);
+        div.appendChild(text);
+        div.classList.add("message");
+        div.classList.add("message_client");
+        messages.appendChild(div);
         text.classList.add("message__text");
         time.classList.add("message__time");
-        text.textContent = text.value;
-        text.value = "";
+        text.textContent = input.value;
+        input.value = "";
         time.textContent = createDate();
         setTimeout(bot, 300);
     }
@@ -43,9 +43,9 @@ function formateDate(date) {
 }
 function bot() {
     const answer = document.querySelector('.chat-widget__messages');
-    let message = document.createElement("name");
-    let time = document.createElement("name");
-    let text = document.createElement("name");
+    let message = document.createElement("div");
+    let time = document.createElement("div");
+    let text = document.createElement("div");
     message.classList.add("message");
     message.classList.add("message__time");
     message.classList.add("message__text");
